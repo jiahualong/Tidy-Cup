@@ -34,4 +34,5 @@ d41d8cd98f00b204e9800998ecf8427e ./c.md5
 ```
 
 ### 其它
-使用了`guniq` mac用户需要安GUN CoreUtil [install coreutil in mac](https://apple.stackexchange.com/questions/69223/how-to-replace-mac-os-x-utilities-with-gnu-core-utilities)
+使用了`guniq` mac用户需要 [安装GUN CoreUtil](https://apple.stackexchange.com/questions/69223/how-to-replace-mac-os-x-utilities-with-gnu-core-utilities)
+Linux用户请把 `guniq` 该为 `uniq` 
