@@ -14,9 +14,9 @@ if [ $# == 1 ]; then
     FILE_TYPE="$1"
 fi
 
-## caculate 
-file_arr=`find . -name "$FILE_TYPE" -print`
-for file in ${file_arr[*]}
+# caculate 
+find . -name "$FILE_TYPE" -print0 | \
+while IFS= read -r -d '' -r file
 do
     md5file="${file%.*}".md5
     if [ -f "$md5file" ]
@@ -34,8 +34,8 @@ done
 
 echo 'merge md5 files ...'
 mergeFile="_merge_md5_$(date +%s)"
-file_arr=`find . -name '*.md5' -print`
-for file in ${file_arr[*]}
+find . -name '*.md5' -print0 | \
+while IFS= read -r -d '' -r file 
 do
     echo `cat "$file"` "$file" >> $mergeFile
 done
